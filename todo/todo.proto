@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "todo-list-grpc/todo";
+
+package todo;
+
+service DataTodo {
+    rpc FindAllTodo(Todo) returns (Todos);
+    rpc FindTodoById(Todo) returns (Todo);
+    rpc FindTodoByTitle(Todo) returns (Todo);
+    rpc UpdateTodoById(Todo) returns (Todo);
+    rpc DeleteTodoById(Todo) returns (Todo);
+}
+
+message Todo {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+    bool is_done = 4;
+}
+
+message Todos {
+    repeated Todo todos = 1;
+}
