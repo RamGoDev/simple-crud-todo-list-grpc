@@ -121,6 +121,4 @@ func main() {
 	if err := grpcServer.Serve(listen); err != nil {
 		log.Fatalln("error run grpc serve :: ", err.Error())
 	}
-
-	fmt.Println("Server is running . . . ")
 }
